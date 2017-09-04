@@ -7,6 +7,7 @@ def buttoncommend(m):
     global mode
     mode = m
 
+#建立畫面
 window = tk.Tk()
 window.title('Encoding')
 window.geometry('300x500')
@@ -28,9 +29,10 @@ wordlabel=tk.Label(window,text='輸入文字內容:').grid(row=6,columnspan=3,st
 wordtext=tk.Text(window,width=35,height=12).grid(row=7,columnspan=6,sticky=tk.N)
 codelabel = tk.Label(window,text='密碼:').grid(row=8,columnspan=1,sticky=tk.W)
 codeentry = tk.Entry(window,width=12).grid(row=8,column=1,columnspan=1)
-def start():
+
+def start():  #按下按鈕後的程式
     # 輸入內容
-    print(inputentry)
+    print(inputentry)  #print出來的是None
     text=''
     if inputentry.get() != '':
         try:
@@ -84,5 +86,6 @@ def start():
     except:
         print()
     x = input('按下Enter結束程序')
-enter = tk.Button(window,text='開始!',width=10,command=start).grid(row=8,column=3)
+
+enter = tk.Button(window,text='開始!',width=10,command=start).grid(row=8,column=3) #開始按鈕
 window.mainloop()
